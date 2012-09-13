@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+  <bean id="profesorRepository" class="domain.ProfesorRepository">
+    <property name="profesores">
+      <map>
+        <entry>
+          <key><value>1</value></key>
+          <ref bean="P001" />
+        </entry>
+        <entry>
+          <key><value>2</value></key>
+          <ref bean="P002" />
+        </entry>
+        <entry>
+          <key><value>3</value></key>
+          <ref bean="P003" />
+        </entry>
+      </map>
+    </property>
+  </bean>
+  <bean id="P001" class="domain.Profesor">
+     <property name="id" value="1"/>
+     <property name="cedula" value="101110111"/>
+     <property name="nombre" value="Carlos Perez"/>
+     <property name="titulo" value="Licenciado"/>
+     <property name="area" value="Administracion"/>
+     <property name="telefono" value="3456-7890"/>
+  </bean>
+  <bean id="P002" class="domain.Profesor">
+     <property name="id" value="2"/>
+     <property name="cedula" value="202220222"/>
+     <property name="nombre" value="Luis Torres"/>
+     <property name="titulo" value="Master"/>
+     <property name="area" value="Economia"/>
+     <property name="telefono" value="6677-3456"/>
+  </bean>
+  <bean id="P003" class="domain.Profesor">
+     <property name="id" value="3"/>
+     <property name="cedula" value="303330333"/>
+     <property name="nombre" value="Juan Castro"/>
+     <property name="titulo" value="Licenciado"/>
+     <property name="area" value="Matematica"/>
+     <property name="telefono" value="6755-7788"/>
+  </bean>
+  <bean id="groupRepository" class="domain.GroupRepository">
+    <property name="grupos">
+      <map>
+        <entry>
+          <key><value>1</value></key>
+          <ref bean="G001" />
+        </entry>
+        <entry>
+          <key><value>2</value></key>
+          <ref bean="G002" />
+        </entry>
+        <entry>
+          <key><value>3</value></key>
+          <ref bean="G003" />
+        </entry>
+		<entry>
+          <key><value>4</value></key>
+          <ref bean="G004" />
+        </entry>
+		<entry>
+          <key><value>5</value></key>
+          <ref bean="G005" />
+        </entry>
+		<entry>
+          <key><value>6</value></key>
+          <ref bean="G006" />
+        </entry>
+      </map>
+    </property>
+  </bean>  
+  <bean id="G1" class="domain.Group">
+     <property name="id" value="1"/>
+	 <property name="numero" value ="1"/>
+     <property name="sigla" value="ADM-001"/>
+     <property name="nombre" value="Elementos de Administración"/>
+     <property name="horario" value="K,J 7:00-9:00am"/>
+     <property name="aula" value="A01"/>
+	 <property name="cedulaProfesor" value="101110111"/>
+  </bean>
+  <bean id="G2" class="domain.Group">
+     <property name="id" value="2"/>
+	 <property name="numero" value ="1"/>
+     <property name="sigla" value="ECN-001"/>
+     <property name="nombre" value="Principios de Economía"/>
+     <property name="horario" value="L,M 9:00-11:00am"/>
+     <property name="aula" value="B02"/>
+	 <property name="cedulaProfesor" value="202220222"/>
+  </bean>
+  <bean id="G3" class="domain.Group">
+     <property name="id" value="3"/>
+	 <property name="numero" value ="2"/>
+     <property name="sigla" value="MAT-001"/>
+     <property name="nombre" value="Matematica I"/>
+     <property name="horario" value="K,J 1:00-3:00pm"/>
+     <property name="aula" value="A02"/>
+	 <property name="cedulaProfesor" value="303330333"/>
+  </bean>
+  <bean id="G4" class="domain.Group">
+     <property name="id" value="4"/>
+	 <property name="numero" value ="1"/>
+     <property name="sigla" value="ADM-101"/>
+     <property name="nombre" value="Administración Avanzada"/>
+     <property name="horario" value="K,J 13:00-15:00am"/>
+     <property name="aula" value="A01"/>
+	 <property name="cedulaProfesor" value="101110111"/>
+  </bean>
+  <bean id="G5" class="domain.Group">
+     <property name="id" value="5"/>
+	 <property name="numero" value ="2"/>
+     <property name="sigla" value="ECN-101"/>
+     <property name="nombre" value="Economía I"/>
+     <property name="horario" value="K,J 9:00-11:00am"/>
+     <property name="aula" value="B02"/>
+	 <property name="cedulaProfesor" value="202220222"/>
+  </bean>
+  <bean id="G6" class="domain.Group">
+     <property name="id" value="6"/>
+	 <property name="numero" value ="2"/>
+     <property name="sigla" value="MAT-102"/>
+     <property name="nombre" value="Matematica II"/>
+     <property name="horario" value="K,J 14:00-16:00pm"/>
+     <property name="aula" value="A02"/>
+	 <property name="cedulaProfesor" value="303330333"/>
+  </bean>  
+</beans>
